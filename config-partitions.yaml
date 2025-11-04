@@ -1,0 +1,18 @@
+			partitions:
+  payment:
+    classification: PII
+    kek_path: secret/hsm/kek/payment-prod
+    dek_count: 3
+    destructive_policy: zeroize_on_tamper
+
+  tokenization:
+    classification: PCI
+    kek_path: secret/hsm/kek/token-prod
+    dek_count: 5
+    destructive_policy: revoke_and_zeroize
+
+  analytics:
+    classification: INTERNAL
+    kek_path: secret/hsm/kek/analytics
+    dek_count: 1
+    destructive_policy: none

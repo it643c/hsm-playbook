@@ -26,8 +26,14 @@ cp hsm-config.sh hsm-config-prod.sh
 cp .env.example .env
 nano .env  # ← Add real PIN
 
-# 3. Test (DRY RUN) — SAFE, NO CHANGES
+# 3. Test (DRY RUN)
 export HSM_PIN=$(grep HSM_PIN .env | cut -d= -f2)
-sudo ./hsm-maintenance.sh --dry-run
+./hsm-maintenance.sh --dry-run
 
+# 4. Run for real
+./hsm-maintenance.sh
 
+```bash
+# Schedule weekly
+sudo cp cron-hsm-job /etc/cron.d/hsm-maintenance
+sudo cp logrotate-hsm /etc/logrotate.d/hsm-audit

@@ -29,3 +29,5 @@ nano .env  # ← Add real PIN
 # 3. Test (DRY RUN) — SAFE, NO CHANGES
 export HSM_PIN=$(grep HSM_PIN .env | cut -d= -f2)
 sudo ./hsm-maintenance.sh --dry-run
+
+

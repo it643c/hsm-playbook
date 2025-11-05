@@ -1,0 +1,3 @@
+# /etc/cron.d/hsm-maintenance
+# Run every Sunday at 2:30 AM
+30 2 * * 0 root /opt/hsm-playbook/hsm-maintenance.sh >> /var/log/hsm-cron.log 2>&1

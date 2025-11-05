@@ -32,3 +32,8 @@ export HSM_PIN=$(grep HSM_PIN .env | cut -d= -f2)
 
 # 4. Run for real
 ./hsm-maintenance.sh
+
+```bash
+# Schedule weekly
+sudo cp cron-hsm-job /etc/cron.d/hsm-maintenance
+sudo cp logrotate-hsm /etc/logrotate.d/hsm-audit

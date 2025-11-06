@@ -8,8 +8,8 @@ Live repo: https://github.com/it643c/hsm-playbook
 Already forked by two EU banks and one top-20 exchange.
 
 ### Full HSM Lifecycle Suite
-- `hsm-partition-setup.sh` → **one-time**: creates isolated tenant partitions + destructive policies  
-- `hsm-maintenance.sh` → **monthly**: zero-downtime key rotation with 24 h overlap  
+- `hsm-partition-setup.sh` → one-time onboarding: partitions + destructive policies  
+- `hsm-troubleshoot.sh` → hardware incident response bible (every error code known to man)
 
 ### Why this exists
 Manual HSM ops = single point of failure.  

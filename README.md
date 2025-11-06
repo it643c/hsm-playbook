@@ -14,6 +14,10 @@ This tool automates the entire key lifecycle (generate → label → rotate → 
 
 ### Architecture (30-second overview)
 
+Cron/Scheduler → hsm-maintenance.sh → PyKCS11 → HSM
+       ↓
+Encrypted backup + JSON audit log (append-only)
+
 ### One-command demo
 ```bash
 git clone https://github.com/it643c/hsm-playbook.git

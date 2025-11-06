@@ -1,3 +1,9 @@
+# HSM Playbook – Zero-Downtime PKCS#11 Key Rotation Engine
+
+**Production-grade • Dry-run safe • Pure JSONL audit • AES-256 backups • 24 h overlap**
+
+Drop-in replacement for manual HSM ops on Thales payShield, Luna NetHSM, AWS CloudHSM, Securosys Primus.
+
 # HSM Playbook – Production-Grade HSM Automation
 
 **Zero-downtime key rotation • Full audit trail • FIPS 140-2 ready • Crypto-custody battle-tested**

@@ -33,17 +33,3 @@ Zero hard-coded secrets
 Works with any PKCS#11 HSM
 3-line cron setup for monthly rotation
 MPC-sharding prep (keys exportable for shamir splits)
-
-git clone https://github.com/it643c/hsm-playbook.git
-cd hsm-playbook
-cp .env.example .env
-# edit .env → put your HSM_PIN and SLOT
-./hsm-maintenance.sh --dry-run      # see exactly what will happen
-./hsm-maintenance.sh --execute      # DO IT
-
-FeaturesSafe rotation with 24h old-key overlap
-Automatic backup to AES-256 encrypted file
-Zero hard-coded secrets
-Works with any PKCS#11 HSM
-3-line cron setup for monthly rotation
-MPC-sharding prep (keys exportable for shamir splits)

@@ -49,4 +49,4 @@ Incident Bible→ hsm-troubleshoot.sh – every hardware error code known to man
 Looking for my next role: HSM Fleet Lead – crypto custody, insurance, or government.
 I deploy Day-1, auditors smile, Day 2, you save $400k/year on Thales support.
 DM me if interested
-#CryptoSecurity #HSM #PKCS11 #ZeroTrust #OpenSource #WeAreHiring
+#CryptoSecurity #HSM #PKCS11 #ZeroTrust #OpenSource 

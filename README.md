@@ -44,9 +44,9 @@ Audit examplejson
 
 {"timestamp":"2025-11-06T19:11:22Z","action":"system-health","slot":"2","battery":"3.3V","temp":"41C","tamper":"clear","firmware":"7.8.2","status":"OK"}
 
-Incident Bible→ hsm-troubleshoot.sh – every hardware error code known to man + exact fixLooking for my next role: HSM Fleet Lead – crypto custody, insurance, or government.
-I deploy Day-1, auditors smile
-Day 2, you save $400k/year on Thales support.DM me.
-I start Monday.
+Incident Bible→ hsm-troubleshoot.sh – every hardware error code known to man + exact fix
 
+Looking for my next role: HSM Fleet Lead – crypto custody, insurance, or government.
+I deploy Day-1, auditors smile, Day 2, you save $400k/year on Thales support.
+DM me if interested
 #CryptoSecurity #HSM #PKCS11 #ZeroTrust #OpenSource #WeAreHiring

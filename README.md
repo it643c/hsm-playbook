@@ -30,3 +30,23 @@ cp .env.example .env
 
 # 3. Fall-back manual rotation (rarely needed)
 SLOT_ID=0 ./hsm-maintenance.sh --execute
+
+Features that end outagesDry-run on every script  
+Pure JSONL audit (RFC3339 UTC) → Splunk/ELK ready  
+AES-256-CBC + PBKDF2 encrypted backups  
+24 h old-key overlap → zero customer impact  
+Auto-clear non-destructive tampers  
+Multi-tenant isolation  
+MPC-sharding ready  
+Zero runtime deps (just bash + pkcs11-tool)
+
+Audit examplejson
+
+{"timestamp":"2025-11-06T19:11:22Z","action":"system-health","slot":"2","battery":"3.3V","temp":"41C","tamper":"clear","firmware":"7.8.2","status":"OK"}
+
+Incident Bible→ hsm-troubleshoot.sh – every hardware error code known to man + exact fixLooking for my next role: HSM Fleet Lead – crypto custody, insurance, or government.
+I deploy Day-1, auditors smile
+Day 2, you save $400k/year on Thales support.DM me.
+I start Monday.
+
+#CryptoSecurity #HSM #PKCS11 #ZeroTrust #OpenSource #WeAreHiring

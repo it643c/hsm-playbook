@@ -1,3 +1,8 @@
+#!/bin/bash
+# HSM Hardware Incident Response Bible
+# Run: cat hsm-troubleshoot.sh | less
+# Copy any row → paste into ticket → profit
+
 General HSM Troubleshooting SOP (High-Level Workflow)
 
 Follow this sequence for any HSM incident. Time estimate: 15-60 minutes initial triage; escalate to vendor RMA if unresolved.

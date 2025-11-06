@@ -1,3 +1,9 @@
 # /etc/cron.d/hsm-maintenance
 # Run every Sunday at 2:30 AM
 30 2 * * 0 root /opt/hsm-playbook/hsm-maintenance.sh >> /var/log/hsm-cron.log 2>&1
+
+# Weekly full system health + smart rotation
+0 3 * * 0 /opt/hsm-playbook/hsm-system-maintenance.sh --weekly
+
+# Fall back to old script only if you want single-slot manual control
+0 2 1 * * SLOT_ID=0 /opt/hsm-playbook/hsm-maintenance.sh --execute

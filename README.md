@@ -13,3 +13,12 @@ This tool automates the entire key lifecycle (generate → label → rotate → 
 - On-chain-ready audit logs
 
 ### Architecture (30-second overview)
+
+### One-command demo
+```bash
+git clone https://github.com/it643c/hsm-playbook.git
+cd hsm-playbook
+cp .env.example .env
+# edit .env → put your HSM_PIN and SLOT
+./hsm-maintenance.sh --dry-run      # see exactly what will happen
+./hsm-maintenance.sh --execute      # DO IT

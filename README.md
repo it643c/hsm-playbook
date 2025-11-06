@@ -36,3 +36,7 @@ cp .env.example .env
 ./hsm-maintenance.sh --dry-run      # see exactly what will happen
 ./hsm-maintenance.sh --execute      # DO IT
 
+Looking for the next security engineering role in crypto custody or HSM infra.
+DM me if you need someone who ships fortified systems.
+
+#CryptoSecurity #HSM #PKCS11 #KeyRotation #Blockchain #OpenSource

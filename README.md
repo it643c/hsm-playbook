@@ -54,6 +54,8 @@ Audit log example (/var/log/hsm-audit.jsonl)json
 {"timestamp":"2025-11-06T18:00:00Z","action":"rotation-complete","key_label":"master-encryption-key","slot":"0","backup_path":"/opt/hsm-backups/hsm-keys-20251106-180000Z.aes","dry_run":"false"}
 
 Looking for the next security engineering role in crypto custody, insurance, or government.
-Need someone who ships fortified systems that make auditors smile.DM me. I deploy next week.
+Need someone who ships fortified systems that make auditors smile.
+DM me.
+I deploy next week.
 
 #CryptoSecurity #HSM #PKCS11 #KeyRotation #ZeroTrust #OpenSource

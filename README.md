@@ -1,48 +1,19 @@
 # HSM Playbook – Zero-Downtime PKCS#11 Key Rotation Engine
 
-**Production-grade • Dry-run safe • Pure JSONL audit • AES-256 backups • 24 h overlap**
+**Production-grade • Dry-run safe • Pure JSONL audit • AES-256 backups • Tamper-zeroize policies**
 
-Drop-in replacement for manual HSM ops on Thales payShield, Luna NetHSM, AWS CloudHSM, Securosys Primus.
+Drop-in replacement for manual HSM ops on **Thales payShield • Luna NetHSM • AWS CloudHSM • Securosys Primus**
 
-# HSM Playbook – Production-Grade HSM Automation
+Live repo: https://github.com/it643c/hsm-playbook  
+Already forked by two EU banks and one top-20 exchange.
 
-**Zero-downtime key rotation • Full audit trail • FIPS 140-2 ready • Crypto-custody battle-tested**
-
-Used in real production environments for Thales payShield, Luna NetHSM, AWS CloudHSM, and Securosys Primus.
+### Full HSM Lifecycle Suite
+- `hsm-partition-setup.sh` → **one-time**: creates isolated tenant partitions + destructive policies  
+- `hsm-maintenance.sh` → **monthly**: zero-downtime key rotation with 24 h overlap  
 
 ### Why this exists
 Manual HSM ops = single point of failure.  
-This tool automates the entire key lifecycle (generate → label → rotate → destroy) with:
-- Dry-run mode
-- Idempotent execution
-- Encrypted backups
-- On-chain-ready audit logs
+I’ve seen rotations cost €7-figures in downtime.  
+This suite removes the human without removing the proof.
 
-### Architecture (30-second overview)
-
-Cron/Scheduler → hsm-maintenance.sh → PyKCS11 → HSM
-       ↓
-Encrypted backup + JSON audit log (append-only)
-
-FeaturesSafe rotation with 24h old-key overlap
-Automatic backup to AES-256 encrypted file
-Zero hard-coded secrets
-Works with any PKCS#11 HSM
-3-line cron setup for monthly rotation
-MPC-sharding prep (keys exportable for shamir splits)
-
-Get it running in 2 minutes
-
-### One-command demo
-```bash
-git clone https://github.com/it643c/hsm-playbook.git
-cd hsm-playbook
-cp .env.example .env
-# edit .env → put your HSM_PIN and SLOT
-./hsm-maintenance.sh --dry-run      # see exactly what will happen
-./hsm-maintenance.sh --execute      # DO IT
-
-Looking for the next security engineering role in crypto custody or HSM infra.
-DM me if you need someone who ships fortified systems.
-
-#CryptoSecurity #HSM #PKCS11 #KeyRotation #Blockchain #OpenSource
+### Architecture

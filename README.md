@@ -17,3 +17,41 @@ I’ve seen rotations cost €7-figures in downtime.
 This suite removes the human without removing the proof.
 
 ### Architecture
+Cron → hsm-partition-setup.sh (once)
+   ↓
+Cron → hsm-maintenance.sh (monthly per slot)
+   ↓
+Encrypted backup + append-only JSONL audit → SIEM
+
+### 2-minute production deploy
+```bash
+git clone https://github.com/it643c/hsm-playbook.git
+cd hsm-playbook
+cp .env.example .env
+# edit .env → PKCS11_MODULE, HSM_PIN, BACKUP_PASS
+
+# 1. Onboard HSM (once)
+./hsm-partition-setup.sh --dry-run
+./hsm-partition-setup.sh
+
+# 2. Monthly rotation (example slot 0)
+SLOT_ID=0 ./hsm-maintenance.sh --dry-run
+SLOT_ID=0 ./hsm-maintenance.sh --execute
+
+FeaturesDry-run mode (no changes)
+Idempotent everything
+Pure JSONL audit log (RFC3339 UTC, one line per event)
+AES-256-CBC + PBKDF2 encrypted backups
+24 h old-key overlap → zero customer impact
+Multi-tenant partition isolation
+Tamper → full zeroize + max failed logins → erase
+MPC-sharding ready (keys exportable)
+Works on any PKCS#11 HSM
+Zero runtime dependencies (just bash + pkcs11-tool)
+
+Audit log example (/var/log/hsm-audit.jsonl)json
+
+{"timestamp":"2025-11-06T18:00:00Z","action":"rotation-complete","key_label":"master-encryption-key","slot":"0","backup_path":"/opt/hsm-backups/hsm-keys-20251106-180000Z.aes","dry_run":"false"}
+
+Looking for the next security engineering role in crypto custody, insurance, or government.
+Need someone who ships fortified systems that make auditors smile.DM me. I deploy next week.#CryptoSecurity #HSM #PKCS11 #KeyRotation #ZeroTrust #OpenSource

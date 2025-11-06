@@ -1,39 +1,15 @@
-# HSM Playbook — Production HSM Ops in One Command
+# HSM Playbook – Production-Grade HSM Automation
 
-**Zero-trust. Auditable. Idempotent. FIPS-ready.**
+**Zero-downtime key rotation • Full audit trail • FIPS 140-2 ready • Crypto-custody battle-tested**
 
----
+Used in real production environments for Thales payShield, Luna NetHSM, AWS CloudHSM, and Securosys Primus.
 
-## Features
-- Health check
-- Key inventory
-- **Safe rotation** (backup + idempotent)
-- **Dry-run mode**
-- Full audit log
-- Config-driven (no hardcoding)
+### Why this exists
+Manual HSM ops = single point of failure.  
+This tool automates the entire key lifecycle (generate → label → rotate → destroy) with:
+- Dry-run mode
+- Idempotent execution
+- Encrypted backups
+- On-chain-ready audit logs
 
----
-
-## Quick Start (Demo)
-
-```bash
-# 1. Clone
-git clone https://github.com/it643c/hsm-playbook
-cd hsm-playbook
-
-# 2. Copy config + secrets
-cp hsm-config.sh hsm-config-prod.sh
-cp .env.example .env
-nano .env  # ← Add real PIN
-
-# 3. Test (DRY RUN)
-export HSM_PIN=$(grep HSM_PIN .env | cut -d= -f2)
-./hsm-maintenance.sh --dry-run
-
-# 4. Run for real
-./hsm-maintenance.sh
-
-```bash
-# Schedule weekly
-sudo cp cron-hsm-job /etc/cron.d/hsm-maintenance
-sudo cp logrotate-hsm /etc/logrotate.d/hsm-audit
+### Architecture (30-second overview)

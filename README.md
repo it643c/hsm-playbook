@@ -5,7 +5,6 @@
 The only open-source repo that replaces Thales support contracts.
 
 Live: https://github.com/it643c/hsm-playbook  
-Already deployed by two EU banks, one top-20 exchange, and two government agencies.
 
 ### Full Lifecycle – Three Scripts, Zero Excuses
 
@@ -46,24 +45,7 @@ Audit examplejson
 
 Incident Bible→ hsm-troubleshoot.sh – every hardware error code known to man + exact fix
 
-# Robert Blake | 53. Still Dangerous.
-
-> “The best candidates look like they can’t hold a job.”  
-> — Paul Graham, 2008
-
-**I fix encryption & IAM fires before the regulators land.**
-
-- Kept F-16s flying (USAF "94–’98)  
-- Locked down ITAR data @ Boeing  
-- Built Thales CipherTrust walls around $50M card data @ Wells Fargo (twice)  
-- 15 Power BI dashboards catching AML fraud @ Northwestern Mutual right now  
-
-Every “job hop” = another company that called me when the audit clock was at 29 days.
-
-Currently shipping:  
-→ Power BI + Kusto dashboards that reduced false positives by 25%  
-→ Terraform + Azure Policy sets for CMMC 2.0 Level 2  
-→ Python scripts that rotate 40,000 keys without downtime  
+# Robert Blake 
 
 If your GRC / FinCEN / PCI program is on fire, I’ve already fixed your exact problem.
 
@@ -71,6 +53,9 @@ If your GRC / FinCEN / PCI program is on fire, I’ve already fixed your exact p
 robert.blake@proton.me | (602) 487-0467
 
 #Over53AndDangerous
+
+> “The best candidates look like they can’t hold a job.”  
+> — Paul Graham, 2008
 
 Looking for my next role: HSM Fleet Lead – crypto custody, insurance, or government.
 I deploy Day-1, auditors smile, Day 2, you save $400k/year on Thales support.
